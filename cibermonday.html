@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Monday | Nebula Software - 20% de descuento</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --nebula-dark: #0a0a0f;
+            --nebula-purple: #8b5cf6;
+            --nebula-purple-light: #a78bfa;
+            --nebula-purple-soft: #c4b5fd;
+            --nebula-purple-deep: #6d28d9;
+            --nebula-white: #ffffff;
+            --nebula-gray: #9ca3af;
+            --nebula-border: #2d2d44;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--nebula-dark);
+            color: var(--nebula-white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER / HERO ===== */
+        .hero {
+            background: linear-gradient(145deg, #0a0a0f 0%, #1a0b2e 60%, #2d1b4e 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--nebula-purple);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(139, 92, 246, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 60%;
+            height: 160%;
+            background: radial-gradient(circle at 70% 60%, rgba(196, 181, 253, 0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--nebula-white);
+            color: var(--nebula-purple-deep);
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), 0 0 40px rgba(139, 92, 246, 0.6);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 span {
+            color: var(--nebula-purple-light);
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.9), 0 0 40px rgba(139, 92, 246, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--nebula-purple-soft);
+            max-width: 700px;
+            margin: 0 auto 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .discount-highlight {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--nebula-white);
+            background: rgba(139, 92, 246, 0.25);
+            padding: 10px 28px;
+            border-radius: 14px;
+            display: inline-block;
+            border: 2px dashed var(--nebula-purple-light);
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), inset 0 0 15px rgba(139, 92, 246, 0.15);
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.8);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--nebula-white);
+            color: var(--nebula-purple-deep);
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 16px 48px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--nebula-white);
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.25), 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .cta-button:hover {
+            background: var(--nebula-purple);
+            color: var(--nebula-white);
+            border-color: var(--nebula-purple-light);
+            box-shadow: 0 8px 40px rgba(139, 92, 246, 0.7), 0 0 50px rgba(167, 139, 250, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ===== PRODUCTOS ===== */
+        .products-section {
+            padding: 80px 0;
+            background: var(--nebula-dark);
+            position: relative;
+        }
+
+        .products-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--nebula-purple), transparent);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-title span {
+            color: var(--nebula-purple-light);
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--nebula-gray);
+            font-size: 1.1rem;
+            margin-bottom: 56px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f5f0ff 100%);
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 2px solid transparent;
+            transition: all 0.35s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            color: var(--nebula-dark);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--nebula-purple);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.35), 0 0 30px rgba(167, 139, 250, 0.4);
+        }
+
+        .product-card .discount-tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--nebula-purple-deep);
+            color: var(--nebula-white);
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--nebula-purple-deep);
+        }
+
+        .product-card p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .product-link {
+            display: inline-block;
+            color: var(--nebula-purple);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .product-link:hover {
+            color: var(--nebula-purple-deep);
+            border-bottom-color: var(--nebula-purple-deep);
+        }
+
+        .product-link::after {
+            content: ' →';
+            transition: margin-left 0.3s ease;
+        }
+
+        .product-link:hover::after {
+            margin-left: 6px;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f5f0ff 0%, #ede4ff 100%);
+            border-top: 3px solid var(--nebula-purple);
+            position: relative;
+        }
+
+        .faq-section .section-title {
+            color: var(--nebula-dark);
+        }
+
+        .faq-section .section-title span {
+            color: var(--nebula-purple-deep);
+            text-shadow: none;
+        }
+
+        .faq-section .section-subtitle {
+            color: #6b7280;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--nebula-white);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            border: 2px solid #e5d9ff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.08);
+        }
+
+        .faq-item:hover {
+            border-color: var(--nebula-purple);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .faq-item h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--nebula-purple-deep);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item h4::before {
+            content: '?';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: var(--nebula-purple);
+            color: var(--nebula-white);
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+        }
+
+        .faq-item p {
+            color: #374151;
+            font-size: 1rem;
+            padding-left: 36px;
+        }
+
+        .faq-item a {
+            color: var(--nebula-purple-deep);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--nebula-dark);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 3px solid var(--nebula-purple);
+            color: var(--nebula-gray);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--nebula-purple-light);
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--nebula-white);
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero .discount-highlight {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 1.9rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 14px 32px;
+            }
+
+            .faq-item {
+                padding: 20px;
+            }
+
+            .faq-item p {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">⚡ Cyber Monday 2026</div>
+            <h1>Potencia tu negocio con <span>Nebula Software</span></h1>
+            <p>Herramientas locales, potentes y diseñadas para vender más. Aprovecha el descuento exclusivo en todos nuestros sistemas.</p>
+            <div class="discount-highlight">20% OFF en todos los productos de software</div>
+            <br>
+            <a href="https://nebula.dnrconsultor.com/p/software-y-herramientas.html" class="cta-button" target="_blank" rel="noopener">Ver productos con descuento</a>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTOS ===== -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros <span>sistemas</span> en oferta</h2>
+            <p class="section-subtitle">Todos los productos incluyen instalación y soporte por 15 días. Sistemas locales con conexión mínima a internet.</p>
+
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <span class="discount-tag">-20%</span>
+                    <span class="product-icon">🛒</span>
+                    <h3>Nebula Sales Suite</h3>
+                    <p>Sistema completo de ventas online integrado: POS + Tienda online. Gestiona tus ventas físicas y digitales desde un solo lugar.</p>
+                    <a href="https://nebula.dnrconsultor.com/p/nebula-sales-suite.html" class="product-link" target="_blank" rel="noopener">Conocer más</a>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <span class="discount-tag">-20%</span>
+                    <span class="product-icon">🏠</span>
+                    <h3>Nebula CRM Inmobiliario</h3>
+                    <p>Sistema local para la gestión de propiedades, clientes y matching inmobiliario en segundos. Encuentra la propiedad ideal al instante.</p>
+                    <a href="https://nebula.dnrconsultor.com/p/nebula-crm-inmobiliario.html" class="product-link" target="_blank" rel="noopener">Conocer más</a>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <span class="discount-tag">-20%</span>
+                    <span class="product-icon">📦</span>
+                    <h3>Nebula POS</h3>
+                    <p>Sistema de control de inventario. Mantén un registro preciso de tus productos, entradas y salidas sin depender de la nube.</p>
+                    <a href="https://nebula.dnrconsultor.com/p/sistema-pos-inventario.html" class="product-link" target="_blank" rel="noopener">Conocer más</a>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <span class="discount-tag">-20%</span>
+                    <span class="product-icon">📊</span>
+                    <h3>Dashboard de Ventas</h3>
+                    <p>Sistema local de análisis de ventas inteligente. Visualiza tus métricas clave y toma decisiones basadas en datos reales.</p>
+                    <a href="https://nebula.dnrconsultor.com/p/software-y-herramientas.html" class="product-link" target="_blank" rel="noopener">Conocer más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas <span>frecuentes</span></h2>
+            <p class="section-subtitle">Todo lo que necesitas saber antes de aprovechar el Cyber Monday.</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>¿Los sistemas requieren conexión a internet?</h4>
+                    <p>Todos los sistemas son locales, requieren conexión mínima a internet (solo para envíos).</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué incluye el precio?</h4>
+                    <p>El precio incluye instalación y soporte por 15 días.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿El descuento del 20% aplica a todos los productos?</h4>
+                    <p>Sí, el 20% de descuento aplica exclusivamente a todos los productos de software: Nebula Sales Suite, Nebula CRM Inmobiliario, Nebula POS y Dashboard de Ventas.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cómo puedo adquirir los productos?</h4>
+                    <p>Puedes visitar nuestra página de productos haciendo clic <a href="https://nebula.dnrconsultor.com/p/software-y-herramientas.html" target="_blank" rel="noopener">aquí</a> y seleccionar el sistema de tu interés. El descuento se aplicará automáticamente durante el Cyber Monday.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Nebula. Todos los derechos reservados. RIF V-180288259</p>
+            <p style="margin-top: 8px;">
+                <a href="https://nebulaconsulting.tawk.help/">Preguntas frecuentes</a> &nbsp;|&nbsp;
+                <a href="https://nebula.dnrconsultor.com/p/terminos-y-condiciones.html">Términos y condiciones</a> &nbsp;|&nbsp;
+                <a href="https://nebula.dnrconsultor.com/p/politica-de-cookies.html">Política de Cookies</a> &nbsp;|&nbsp;
+                <a href="https://nebula.dnrconsultor.com/p/politica-de-privacidad.html">Política de privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
